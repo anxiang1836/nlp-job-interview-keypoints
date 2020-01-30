@@ -70,29 +70,27 @@
 
 - 缺失值过多的特征
 
-  因为缺失值确实过多会导致无法从特征的分布中学习到数据的潜在规律
+  > 因为缺失值确实过多会导致无法从特征的分布中学习到数据的潜在规律
 
 - 共线性特征
 
-  当2个具有共线性时，会导致模型过多的学习到该共线性的分布。
-
-  【如何分析共线性问题？】通过计算皮尔斯相关系数来进行计算，相关系数的绝对值大于阈值的，可判定为共线性很强的特征对。
+  > 当2个具有共线性时，会导致模型过多的学习到该共线性的分布。
+>
+  > 【如何分析共线性问题？】通过计算皮尔斯相关系数来进行计算，相关系数的绝对值大于阈值的，可判定为共线性很强的特征对。
 
 - 低重要度特征
 
-  【如何计算重要度？】这个问题其实属于树模型中的问题。在树模型中选择分裂点时，会对当前状态下选择信息增益最大的特征和分裂点进行分裂，因此，对于特征而言，特征的重要度即为：该特征带来的信息增益的总量（标准化后的，在集成模型下，那就是多棵树下的加和）
+  > 【如何计算重要度？】这个问题其实属于树模型中的问题。在树模型中选择分裂点时，会对当前状态下选择信息增益最大的特征和分裂点进行分裂，因此，对于特征而言，特征的重要度即为：该特征带来的信息增益的总量（标准化后的，在集成模型下，那就是多棵树下的加和）
 
-  【扩展】在DecisionTree、Xgb、lgb中计算特征重要度的API：
+  > 【扩展】在DecisionTree、Xgb、lgb中计算特征重要度的API：https://www.jianshu.com/p/2110409fbc24
 
-  https://www.jianshu.com/p/2110409fbc24
-
-Will Koehrsen最近开源了一个[特征选择神器](https://github.com/WillKoehrsen/feature-selector)。黄博士对其进行进行了翻译，并给出了[使用范例](https://mp.weixin.qq.com/s/X7Z36KTAkoFLWanCIym8OQ)。
+> Will Koehrsen最近开源了一个[特征选择神器](https://github.com/WillKoehrsen/feature-selector)。黄博士对其进行进行了翻译，并给出了[使用范例](https://mp.weixin.qq.com/s/X7Z36KTAkoFLWanCIym8OQ)。
 
 ## 3.2 [Boruta](https://github.com/scikit-learn-contrib/boruta_py)特征选择算法？
 
 [Boruta算法](https://github.com/scikit-learn-contrib/boruta_py)同样也是一种特征重要度计算的算法，但是不同于上面对于特征在树模型中根据信息增益来计算得到的。
 
-算法的github：https://github.com/scikit-learn-contrib/boruta_py
+> 算法的github：https://github.com/scikit-learn-contrib/boruta_py
 
 算法的主要思路为：
 
@@ -106,5 +104,5 @@ Will Koehrsen最近开源了一个[特征选择神器](https://github.com/WillKo
 
 5. 删除不重要的特征，重复1-4，直到所有特征都被标记。
 
-训练结束后，[boruta_py](https://github.com/scikit-learn-contrib/boruta_py) 还可以输出特征ranking_，表示特征的重要性等级，在特征选择中也是一个很有用的指标。
+训练结束后，[boruta_py](https://github.com/scikit-learn-contrib/boruta_py) 还可以输出**特征ranking_**，表示特征的重要性等级，在特征选择中也是一个很有用的指标。
 
