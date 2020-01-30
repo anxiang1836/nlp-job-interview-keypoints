@@ -5,7 +5,7 @@
 ## ML知识板块
 
 * [特征工程考点](000-ML/01-feature-engineering.md)
-* [优化算法考点](000-ML/02-optimization-algorithm.md)
+* [损失函数考点](000-ML/02-loss-function.md)
 
 ## 树模型知识板块
 
