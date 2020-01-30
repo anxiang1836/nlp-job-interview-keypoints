@@ -1,8 +1,8 @@
-# 问题1：损失函数
+# 损失函数考点
 
 ## 1.1 常见的损失函数？
 
-- 平方损失函数
+* 平方损失函数
 
 $$
 L(y,f(x))=(y-f(x))^2
@@ -12,15 +12,16 @@ $$
 >
 > 线性回归
 
-- 交叉熵损失函数
+* 交叉熵损失函数
 
 $$
 H(p,q)=-\sum p(x)logq(x)
 $$
 
-其中，p(x)​表示正确答案的概率分布，q(x)​是表示预测值的概率分布。举个例子：
+其中，p\(x\)​表示正确答案的概率分布，q\(x\)​是表示预测值的概率分布。举个例子：
 
-比如说，一个三分类的问题，某一个样例的正确答案是(1,0,0)。模型经过SoftMax之后，预测概率为(0.5,0.4,0.1)。那么这个预测结果和正确答案的交叉熵是：
+比如说，一个三分类的问题，某一个样例的正确答案是\(1,0,0\)。模型经过SoftMax之后，预测概率为\(0.5,0.4,0.1\)。那么这个预测结果和正确答案的交叉熵是：
+
 $$
 H((1,0,0),(0.5,0.4,0.1))=-(1*log0.5+0*log0.4+0*log0.1)=0.3
 $$
@@ -29,19 +30,19 @@ $$
 >
 > 神经网络、逻辑回归
 
-- Hinge Loss
+* Hinge Loss
 
 $$
 L(w,b)=max\{0,1-yf(x)\}
 $$
 
-其中，y=1或-1​，f(x)=wx+b，当SVM的核函数为f(x)时。
+其中，y=1或-1​，f\(x\)=wx+b，当SVM的核函数为f\(x\)时。
 
 > 使用Hinge Loss来计算Loss的模型：
 >
 > 支持向量机
 
-- Focal Loss
+* Focal Loss
 
 > （KaiMing团队在2017年提出的[《Focal Loss for Dense Object Detection》](https://arxiv.org/abs/1708.02002)）
 >
@@ -62,7 +63,7 @@ $$
 > ```python
 > # keras已经在新版本中加入了 class_weight = 'auto'。
 > # 设置了这个参数后，keras会自动设置class weight让每类的sample对损失的贡献相等
-> 
+>
 > clf.fit([X_head_train,X_body_train], y_train_embedding, 
 >         epochs=10, batch_size=128, 
 >         class_weight = 'auto', 
@@ -70,9 +71,7 @@ $$
 >         callbacks = [tsb])
 > ```
 >
-> 参数说明：https://blog.csdn.net/weixin_40755306/article/details/82290033
-
-
+> 参数说明：[https://blog.csdn.net/weixin\_40755306/article/details/82290033](https://blog.csdn.net/weixin_40755306/article/details/82290033)
 
 Focal Loss函数的主要出发点为：**通过减少易分类样本的权重，使得模型在训练时更专注于难分类的样本**。
 
@@ -80,9 +79,7 @@ Focal Loss函数的主要出发点为：**通过减少易分类样本的权重�
 
 ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200130214251.png)
 
-
-
-> 首先在原有的Cross Entropy的基础上加了一个因子，其中γ>0使得减少易分类样本的损失。使得更关注于困难的、错分的样本。
+> 首先在原有的Cross Entropy的基础上加了一个因子，其中γ&gt;0使得减少易分类样本的损失。使得更关注于困难的、错分的样本。
 >
 > ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200130221931.png)
 >
@@ -122,14 +119,19 @@ Focal loss 核心参数有两个，一个是α，一个是γ。
 
 > 由于原来就有$0≤p≤1$，所以p^n​整体会更接近于0，因此初始状态就符合目标分布了，所以最终能加速收敛。
 
-从loss角度也可以比较两者的差异。假设t为(0,1)的概率值，那么原来的Loss是：
+从loss角度也可以比较两者的差异。假设t为\(0,1\)的概率值，那么原来的Loss是：
+
 $$
 −tlogp−(1−t)log(1−p)
 $$
+
 而次方之后的loss就变成了:
+
 $$
 −tlogp^n−(1−t)log(1−p^n)
 $$
+
 注意到，当标签为1时，相当于放大了loss的权重，而标签为0时，1-p^n​更接近于1，因而得到的Loss会更小。
 
 相比于focal loss或人工调节类权重，这种方法的好处是不改变原来内积（$p$通常是内积加sigmoid得到的）的分布就能使得分布更加贴近目标，而不改变内积分布通常来说对优化更加友好。
+
