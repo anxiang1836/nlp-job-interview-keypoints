@@ -63,7 +63,11 @@ $$
 > # keras已经在新版本中加入了 class_weight = 'auto'。
 > # 设置了这个参数后，keras会自动设置class weight让每类的sample对损失的贡献相等
 > 
-> clf.fit([X_head_train,X_body_train], y_train_embedding, epochs=10, batch_size=128, class_weight = 'auto', validation_data= [[X_head_validate, X_body_validate], y_validate_embedding], callbacks = [tsb])
+> clf.fit([X_head_train,X_body_train], y_train_embedding, 
+>         epochs=10, batch_size=128, 
+>         class_weight = 'auto', 
+>         validation_data= [[X_head_validate, X_body_validate], y_validate_embedding], 
+>         callbacks = [tsb])
 > ```
 >
 > 参数说明：https://blog.csdn.net/weixin_40755306/article/details/82290033
