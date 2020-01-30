@@ -9,6 +9,12 @@
 	* [优化算法考点](000-ML/02-optimization-algorithm.md)
 
 * [决策树相关知识](001-DT/README.md)
-  * [决策树考点](001-DT/01-decision-tree.md)
-  * [GBDT考点](001-DT/02-GBDT.md)
+	* [决策树考点](001-DT/01-decision-tree.md)
+	* [GBDT考点](001-DT/02-GBDT.md)
 
+## Embedding知识板块
+
+
+## 文本分类知识板块
+
+* [TextCNN](003-Classification/01-TextCNN.md)
