@@ -14,7 +14,7 @@
 
 ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200131214949.png)
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200131214434.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200131234233.png)
 
 ### 2.模型训练
 
@@ -51,7 +51,7 @@
 
 对于Weight1的修改量：首先，将EI（转置）与Weight2进行相乘，得到Hidden Layer的Loss值；然后，用Input与Hidden Layer的Loss值进行外积运算，得到9*10维的修改量矩阵；
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200131220647.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200131233955.png)
 
 
 
@@ -59,7 +59,7 @@
 
 这里就将修改量与学习率进行相乘，从Weight中减下去就OK咯！
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200131221829.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200131234033.png)
 
 ### 3. CBOW的区别之处
 
