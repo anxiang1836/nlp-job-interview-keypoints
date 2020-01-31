@@ -12,6 +12,10 @@
 * [决策树考点](02-tree-model/01-decision-tree.md)
 * [GBDT考点](02-tree-model/02-gbdt.md)
 
+## Embedding知识板块 <a id="03-embedding"></a>
+
+* [Word2Vec考点](03-embedding/01-word2vec.md)
+
 ## 文本分类知识板块 <a id="04-text-classification"></a>
 
 * [TextCNN](04-text-classification/01-textcnn.md)
