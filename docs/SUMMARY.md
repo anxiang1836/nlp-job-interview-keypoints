@@ -32,7 +32,8 @@
 ## 信息抽取知识板块 <a id="05-info-extraction"></a>
 
 * [NER方法综述](05-info-extraction/00-review_of_NER.md)
-* [关系抽取方法综述](05-info-extraction/01-review_of_RE.md)
-* [PCNN for RE](05-info-extraction/02-PCNN.md)
+* [RE方法综述](05-info-extraction/01-review_of_RE.md)
+* [CNN for RE](05-info-extraction/02-CNN-for-RE.md)
 * [LSTM for RE](05-info-extraction/03-LSTM-for-RE.md)
-* [DGCNN for RE](05-info-extraction/04-DGCNN.md)
+* [PCNN-MIL](05-info-extraction/04-PCNN.md)
+* [DGCNN](05-info-extraction/05-DGCNN.md)
