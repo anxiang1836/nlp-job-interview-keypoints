@@ -12,7 +12,7 @@
 
 - 对于实体对显示的添加了Position indicators（位置指示符）；
 
-  > <e1>people<\e1> have been moving back into <e2>downtown<\e2>。 
+  > `<e1>`people`<\e1> `have been moving back into `<e2>`downtown`<\e2>`。 
   >
   > 就是直接在原句子中增加了2个字符的起始与停止的位置，然后就没有然后了。
 
