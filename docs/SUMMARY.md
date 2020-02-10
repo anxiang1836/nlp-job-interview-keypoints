@@ -12,6 +12,7 @@
 * [特征工程考点](01-mechine-learning/01-feature-engineering.md)
 * [损失函数考点](01-mechine-learning/02-loss-function.md)
 * [优化方法考点](01-mechine-learning/03-optimization-method.md)
+* [其他统计学习考点](01-mechine-learning/04-statistical-learning.md)
 
 ## 树模型知识板块 <a id="02-tree-model"></a>
 
