@@ -1,18 +1,10 @@
 # 优化方法知识
 
-> 参考资料：
->
-> [1] https://zhuanlan.zhihu.com/p/43506482
->
-> [2] https://zhuanlan.zhihu.com/p/32230623
->
-> [3] https://zhuanlan.zhihu.com/p/31630368
->
-> [4]https://zhuanlan.zhihu.com/p/22252270
-
 深度学习优化算法经历了 SGD -> SGDM -> NAG ->AdaGrad -> AdaDelta -> Adam -> Nadam 这样的发展历程。
 
 这块知识我是属于几乎完全空白的状态，这里按照优化算法的发展历程，分别梳理个优化算法（改进之处以及仍存在的缺点问题）。
+
+> 主要参考资料包括：[“深度学习中的优化算法”](https://zhuanlan.zhihu.com/p/43506482)、[“一文看懂常用的梯度下降算法”](https://zhuanlan.zhihu.com/p/31630368)、[“一个框架看懂优化算法之异同 SGD/AdaGrad/Adam”](https://zhuanlan.zhihu.com/p/32230623)、[“SWATS算法剖析（自动切换adam与sgd）”](https://zhuanlan.zhihu.com/p/32406552)。
 
 ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200208135105.png)
 
