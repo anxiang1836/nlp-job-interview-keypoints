@@ -40,9 +40,9 @@ $$
 
 SGD也是随机梯度下降算法，是最简单的一种优化算法。
 
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200209150313.png)
+
 > **现在的SGD一般都指mini-batch gradient descent。**
->
-> ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200209150313.png)
 >
 > 【问题】Batch/Mini-batch/stochastic gradient descent的区别？
 >
@@ -79,8 +79,8 @@ SGD也是随机梯度下降算法，是最简单的一种优化算法。
 按照上述算法看可能并不是很直观，有时候冲量梯度下降算法可以写成下面的形式：
 $$
 \begin{align}
-速度更新&:v \gets \alpha \cdot v + (1-\alpha)\cdot g;\\
-参数更新&:\theta \gets \theta - \eta \cdot v。 
+速度更新&:v \gets \alpha \cdot v + (1-\alpha)\cdot g\\
+参数更新&:\theta \gets \theta - \eta \cdot v 
 \end{align}
 $$
 此时我们就可以清楚地看到，所谓的冲量项其实只是梯度的指数加权移动平均值（问题1中阐述的）。
@@ -224,9 +224,13 @@ Adam是集Momentum和AdaGrad于一身的。但是没有Nesterov呀，所以，�
 
 主要是因为：自适应学习率算法可能会**对前期出现的特征过拟合**，后期才出现的特征很难纠正前期的拟合效果。
 
-> 第一篇就是前文提到的吐槽Adam最狠的 [The Marginal Value of Adaptive Gradient Methods in Machine Learning](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1705.08292) 。文中说到，同样的一个优化问题，不同的优化算法可能会找到不同的答案，但自适应学习率的算法往往找到非常差的答案。他们通过一个特定的数据例子说明，自适应学习率算法可能会对前期出现的特征过拟合，后期才出现的特征很难纠正前期的拟合效果。
+> 吐槽Adam最狠的 [The Marginal Value of Adaptive Gradient Methods in Machine Learning](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1705.08292) 。
 >
-> 另外一篇是 [Improving Generalization Performance by Switching from Adam to SGD](https://link.zhihu.com/?target=http%3A//arxiv.org/abs/1712.07628)，进行了实验验证。他们CIFAR-10数据集上进行测试，Adam的收敛速度比SGD要快，但最终收敛的结果并没有SGD好。他们进一步实验发现，主要是后期Adam的学习率太低，影响了有效的收敛。他们试着对Adam的学习率的下界进行控制，发现效果好了很多。
+> 文中说到，同样的一个优化问题，不同的优化算法可能会找到不同的答案，但自适应学习率的算法往往找到非常差的答案。他们通过一个特定的数据例子说明，自适应学习率算法可能会对前期出现的特征过拟合，后期才出现的特征很难纠正前期的拟合效果。
+>
+>  [Improving Generalization Performance by Switching from Adam to SGD](https://link.zhihu.com/?target=http%3A//arxiv.org/abs/1712.07628)，进行了实验验证。
+>
+> 他们CIFAR-10数据集上进行测试，Adam的收敛速度比SGD要快，但最终收敛的结果并没有SGD好。他们进一步实验发现，主要是后期Adam的学习率太低，影响了有效的收敛。他们试着对Adam的学习率的下界进行控制，发现效果好了很多。
 
 ## 问题9：Adam+SGD结合策略？SWATS算法
 
