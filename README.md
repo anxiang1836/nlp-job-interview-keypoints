@@ -4,14 +4,31 @@
 
 > 本项目旨在建立：分版块整理，NLP的核心&热门知识点手册，便于随时的复习、复盘，及时的归纳总结。
 >
-> PS：内容中就不反复copy基本教程了，参照百面机器学习的那种问答形式进行整理。
 
-目前主要考虑设置板块包括：
+从自身能力出发，将学习和复习中的精华Blog进行加工整合。本项目整理的知识点，目前包括如下板块：
 
-- 经典ML板块
-- Embedding板块（包括：TF-IDF、Word2Vec、Bert（以及接触过的一些变种bert））
-- 分类模型板块（包括：FastText、TextCNN、TextRNN、TextRCNN、HAN等）
-- 文本抽取板块（包括：实体抽取、关系抽取、三元组抽取，以及构建知识库用到的Neo4j相关）
-- 相似度匹配板块（包括：simeseNN、K-NRM等LTR模型，以及检索用到的elasticsearch相关）
-
-板块暂时先设置这么多，（其实也是主要从自身所涉猎到的方向出发的）
+1. 基础算法板块
+   - 排序算法
+   - 动态规划-背包问题
+2. ML/DL基础知识板块
+   - 特征工程
+   - 损失函数
+   - 优化方法
+   - 正则化
+   - Attention
+   - 初始化
+   - 其他
+3. Embedding知识板块
+   - Word2Vec
+   - Bert
+4. 文本分类板块
+   - FastText
+   - TextCNN
+   - DPCNN
+5. 信息抽取板块
+   - NER
+   - RE
+6. 树模型板块
+   - 决策树
+   - GBDT
+   - Xgboost/lgb/catboost
