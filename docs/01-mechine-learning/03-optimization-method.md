@@ -139,7 +139,7 @@ NAG算法中，根据累计的动量再计算一步未来位置上的梯度，�
 其中：
 $$
 \begin{align}
-RMS[\Delta x^2]_t &= \sqrt{E[\Delta x^2]_t+\epsilon}\\
+RMS[\Delta x]_t &= \sqrt{E[\Delta x^2]_t+\epsilon}\\
 RMS[g]_t &= \sqrt{E[g^2]_t+\epsilon}
 
 \end{align}
