@@ -28,14 +28,13 @@
 * [TextCNN](04-text-classification/01-textcnn.md)
 * [DPCNN](04-text-classification/02-DPCNN.md)
 
-## 信息抽取知识板块 <a id="05-info-extraction"></a>
+## 知识图谱板块 <a id="05-info-extraction"></a>
 
-* [NER方法综述](05-info-extraction/00-review_of_NER.md)
-* [RE方法综述](05-info-extraction/01-review_of_RE.md)
+* [事件图谱/事理图谱](05-info-extraction/00-envent-graph.md)
+* [NER方法考点](05-info-extraction/01-method_of_NER.md)
 * [CNN for RE](05-info-extraction/02-CNN-for-RE.md)
 * [LSTM for RE](05-info-extraction/03-LSTM-for-RE.md)
-* [PCNN-MIL](05-info-extraction/04-PCNN.md)
-* [DGCNN](05-info-extraction/05-DGCNN.md)
+* [远程监督考点](05-info-extraction/04-MIL.md)
 
 ## 树模型知识板块 <a id="02-tree-model"></a>
 
