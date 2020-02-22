@@ -92,7 +92,7 @@ X=[EV,ET,TV,TT,CF,PF]
 $$
 ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200222154601.png)
 
-#### 1.4.3 􏰝􏱘􏱕􏱑全局推理
+#### 1.4.3 全局推理
 
 从句子级抽取了若干个事件，因为在一篇报道中，事件会以不同的角度进行重复，所以，目标函数就是最小化这若干个事件的相似程度。
 
