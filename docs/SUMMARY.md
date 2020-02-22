@@ -30,11 +30,11 @@
 
 ## 知识图谱板块 <a id="05-info-extraction"></a>
 
-* [事件图谱/事理图谱](05-info-extraction/00-envent-graph.md)
-* [NER方法考点](05-info-extraction/01-method_of_NER.md)
-* [CNN for RE](05-info-extraction/02-CNN-for-RE.md)
-* [LSTM for RE](05-info-extraction/03-LSTM-for-RE.md)
-* [远程监督考点](05-info-extraction/04-MIL.md)
+* [事件图谱/事理图谱](05-knowledge-graph/00-envent-graph.md)
+* [NER方法考点](05-knowledge-graph/01-method_of_NER.md)
+* [CNN for RE](05-knowledge-graph/02-CNN-for-RE.md)
+* [LSTM for RE](05-knowledge-graph/03-LSTM-for-RE.md)
+* [远程监督考点](05-knowledge-graph/04-MIL.md)
 
 ## 树模型知识板块 <a id="02-tree-model"></a>
 
