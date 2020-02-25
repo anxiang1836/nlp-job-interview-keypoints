@@ -2,27 +2,23 @@
 
 * [前言](README.md)
 
-## 基础算法板块 <a id="00-algorithm"></a>
-
-* [排序算法](00-algorithm/01-ranking-algorithm.md)
-* [动态规划-背包问题](00-algorithm/02-DP-algorithm.md)
-
 ## ML/DL基础板块 <a id="01-mechine-learning"></a>
 
-* [特征工程考点](01-mechine-learning/01-feature-engineering.md)
-* [损失函数考点](01-mechine-learning/02-loss-function.md)
-* [优化方法考点](01-mechine-learning/03-optimization-method.md)
-* [正则化考点](01-mechine-learning/04-normalization.md)
-* [Attention考点](01-mechine-learning/05-attention.md)
-* [初始化考点](01-mechine-learning/06-initialization.md)
-* [激活函数考点](01-mechine-learning/07-activation-function.md)
-* [其他统计学习考点](01-mechine-learning/08-statistical-learning.md)
+* [特征工程](01-mechine-learning/01-feature-engineering.md)
+* [损失函数](01-mechine-learning/02-loss-function.md)
+* [优化方法](01-mechine-learning/03-optimization-method.md)
+* [正则化](01-mechine-learning/04-normalization.md)
+* [Attention](01-mechine-learning/05-attention.md)
+* [初始化](01-mechine-learning/06-initialization.md)
+* [激活函数](01-mechine-learning/07-activation-function.md)
+* [其他统计学习](01-mechine-learning/08-statistical-learning.md)
 
 ## Embedding知识板块 <a id="03-embedding"></a>
 
-* [Word2Vec考点](03-embedding/01-word2vec.md)
-* [Bert考点](03-embedding/02-bert.md)
-* [XLNet考点](03-embedding/03-XLNet.md)
+* [Word2Vec](03-embedding/01-word2vec.md)
+* [Bert](03-embedding/02-bert.md)
+* [XLNet](03-embedding/03-XLNet.md)
+* [Albert](03-embedding/04-ALBERT.md)
 
 ## 文本分类知识板块 <a id="04-text-classification"></a>
 
@@ -43,3 +39,8 @@
 
 * [决策树考点](02-tree-model/01-decision-tree.md)
 * [GBDT考点](02-tree-model/02-gbdt.md)
+
+## 基础算法板块 <a id="00-algorithm"></a>
+
+* [排序算法](00-algorithm/01-ranking-algorithm.md)
+* [动态规划-背包问题](00-algorithm/02-DP-algorithm.md)
