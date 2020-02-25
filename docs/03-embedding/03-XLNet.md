@@ -1,3 +1,5 @@
+
+
 # XLNet
 
 > 很有幸能够在疫情中，参加了贪心学院组织的公开课，非常喜欢李文哲老师的讲课风格，而且思路清晰，点赞。
@@ -10,8 +12,8 @@ DAE（Denoising Autoencoders）：Vincent在2008年的论文《Extracting and Co
 >
 >1. 就是以一定概率分布（通常使用二项分布）去擦除原始input矩阵，即每个值都随机置0,  这样看起来部分数据的部分特征是丢失了。
 >2. 以这丢失的数据去计算hat(x)，计算y、z，并将z与原始x做误差迭代，这样，网络就学习了这个破损（Corruputed）的数据。
->
->![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200225111034.png)
+
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200225111034.png)
 
 破坏原始数据的意义在于：
 
