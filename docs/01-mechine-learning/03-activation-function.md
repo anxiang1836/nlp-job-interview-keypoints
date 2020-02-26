@@ -1,6 +1,6 @@
 # 激活函数
 
-> 2020.02.26 文本创建 （参考资料：[从ReLU到GELU，一文概览神经网络的激活函数](https://mp.weixin.qq.com/s/PMPG804-zMDHUzH9Gy4NLw)）
+> 2020.02.26 文本创建
 
 ## 问题1：激活函数的意义？
 
@@ -138,11 +138,23 @@ $$
 
 ## 问题6：GeLU函数？
 
+> 在Transformer 模型（谷歌的 BERT 和 OpenAI 的 GPT-2）中得到了应用。GELU 的论文来自 2016 年，但直到最近才引起关注，下面论文是GELUs的第3版。
+>
 > 论文原文：[GAUSSIAN ERROR LINEAR UNITS (GELUS)](https://arxiv.org/pdf/1606.08415.pdf)
 
-### 6.1 GELU表达式
+### 6.1 Introduction
 
-将input x 乘以一个服从伯努利分布的m，而该伯努利分布又是依赖于输入Input x的。
+1. 以往的激活函数为神经网络进入了非线性（binary threshold, sigmoid, ReLU, ELU, 及特点和优劣）
+
+2. 神经网络中需要在网络层中加入一些noise,或通过加入dropout等方式进行随机正则化。
+
+3. 以往的非线性和随机正则化这两部分基本都是互不相关的，因为辅助非线性变换的那些随机正则化器是与输入无关的。
+
+GELU的核心思想就是：**将非线性与随机正则化结合**。
+
+### 6.2 GELU表达式
+
+将Input x 乘以一个服从伯努利分布的m，而该伯努利分布又是依赖于输入Input x的。
 
 > 这里X是选择标准正态分布的，原因是：一般神经元的输入数据的分布倾向于服从正态分布，尤其是进行了BatchNorm之后。
 
@@ -162,11 +174,54 @@ $$
 $$
 \begin{align}
 \Phi(x)&=\frac{1}{2}+\frac{1}{2}erf\big(\frac{x}{\sqrt 2}\big)\\
+\ \\
 erf(x)&=\frac{1}{\sqrt\pi}\int_{-x}^x e^{-t^2}dt=\frac{2}{\sqrt\pi}\int_0^x e^{-t^2}dt
 \end{align}
 $$
 
 
-> 如何理解呢？
+GELU的函数图像如下：
+
+<img src="https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200227002311.png" style="zoom:50%;" />
+
+如何理解呢？
+
+> 有一个服从正态分布的随机变量X，它不停歇的沿着钟形曲线走来走去。现在网络中有了 输入值 input 𝑥 = 𝑥0，就在此刻这个服从正态分布的随机变量取值为 X = X0，就可以比较 X0 与 𝑥0的大小了。
 >
-> 
+> 当X是服从正态分布的，我们可以依据该概率分布函数的特点，分析出一般情况下X有多大概率是小于某个确定值𝑥的。（比如P(X < 0.5) = 0.5）就得到了Φ(𝑥)。
+>
+> 正态分布的累积分布函数如下图。可以看出当𝑥变小时，P(X <= 𝑥)的值会减小，也就是当输入值inpuits 较小时，inputs被drop 的可能性更大。
+>
+> **GELU通过这种方式加mask，既保持了不确定性，又建立了与input的依赖关系**。
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Normal_Distribution_CDF.svg" style="zoom:80%;" />
+
+ bert源码给出的GELU代码表示如下：
+
+```python
+def gelu(input_tensor):
+	cdf = 0.5 * (1.0 + tf.erf(input_tensor / tf.sqrt(2.0)))
+	return input_tesnsor*cdf
+```
+
+###6.3 GELU与ReLU的区别？
+
+- ReLU：为Inputs乘以一个0或者1，所乘的值是确定的，是依据Sign(x)来确定的；
+
+- GELU：也会为Inputs乘以0或者1，**GELU所加的0-1mask的值是随机的，同时是依赖于inputs的分布的**。
+
+这样做的好处是：（纯属个人理解）为ReLU更增加了随机性，同时又加强与Input之间的依赖关系。
+
+
+
+
+
+
+
+> 全文参考资料：
+>
+> [1]. GELU 激活函数 https://blog.csdn.net/liruihongbob/article/details/86510622
+>
+> [2]. [Deep Learning\] GELU (Gaussian Error Linerar Units) https://www.cnblogs.com/shiyublog/p/11121839.html
+>
+> [3]. 从ReLU到GELU，一文概览神经网络的激活函数 https://mp.weixin.qq.com/s/PMPG804-zMDHUzH9Gy4NLw
