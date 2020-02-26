@@ -9,3 +9,5 @@ Transformer网络由多个层组成，每个层都由多头注意力机制和前
 另外一经典Blog：https://jalammar.github.io/illustrated-transformer/
 
 上面经典blog的翻译：https://zhuanlan.zhihu.com/p/59629215
+
+李文哲的知乎专栏：https://zhuanlan.zhihu.com/p/84559048

@@ -6,7 +6,7 @@
 
 ## SUMMARY
 
-**XLNnet的创新点在于什么？**
+**XLNet的创新点在于什么？**
 
 - **创新点1.1：提出排列语言模型。**
 
@@ -24,7 +24,7 @@
 
 ### 问题1.1：DAE解决什么问题？
 
-**DAE**（Denoising Autoencoders）：Vincent在2008年的论文《Extracting and Composing Robust Features with Denoising Autoencoders》，在输入中加入随机噪声，来缓解经典AutoEncoder容易过拟合的问题。
+**DAE**（Denoising AutoEncoders）：Vincent在2008年的论文《Extracting and Composing Robust Features with Denoising Autoencoders》，在输入中加入随机噪声，来缓解经典AutoEncoder容易过拟合的问题。
 
 >模型的过程如下：
 >

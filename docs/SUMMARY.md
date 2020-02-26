@@ -5,13 +5,15 @@
 ## ML/DL基础板块 <a id="01-mechine-learning"></a>
 
 * [特征工程](01-mechine-learning/01-feature-engineering.md)
-* [损失函数](01-mechine-learning/02-loss-function.md)
-* [优化方法](01-mechine-learning/03-optimization-method.md)
+* [初始化](01-mechine-learning/02-initialization.md)
+* [激活函数](01-mechine-learning/03-activation-function.md)
 * [正则化](01-mechine-learning/04-normalization.md)
-* [Attention](01-mechine-learning/05-attention.md)
-* [初始化](01-mechine-learning/06-initialization.md)
-* [激活函数](01-mechine-learning/07-activation-function.md)
-* [其他统计学习](01-mechine-learning/08-statistical-learning.md)
+* [损失函数](01-mechine-learning/05-loss-function.md)
+* [优化方法](01-mechine-learning/06-optimization-method.md)
+* [Attention](01-mechine-learning/07-attention.md)
+* [CNN](01-mechine-learning/08-CNN.md)
+* [LSTM](01-mechine-learning/09-LSTM.md)
+* [其他统计学习](01-mechine-learning/10-statistical-learning.md)
 
 ## Embedding知识板块 <a id="03-embedding"></a>
 
