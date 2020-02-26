@@ -1,6 +1,6 @@
 # 激活函数
 
-> 2020.02.26 文本创建
+> 参考资料：[1]. [GELU 激活函数](https://blog.csdn.net/liruihongbob/article/details/86510622)、[2]. [[Deep Learning\] GELU (Gaussian Error Linerar Units)](https://www.cnblogs.com/shiyublog/p/11121839.html) 、[3]. [从ReLU到GELU，一文概览神经网络的激活函数](https://mp.weixin.qq.com/s/PMPG804-zMDHUzH9Gy4NLw) 
 
 ## 问题1：激活函数的意义？
 
@@ -211,17 +211,3 @@ def gelu(input_tensor):
 - GELU：也会为Inputs乘以0或者1，**GELU所加的0-1mask的值是随机的，同时是依赖于inputs的分布的**。
 
 这样做的好处是：（纯属个人理解）为ReLU更增加了随机性，同时又加强与Input之间的依赖关系。
-
-
-
-
-
-
-
-> 全文参考资料：
->
-> [1]. GELU 激活函数 https://blog.csdn.net/liruihongbob/article/details/86510622
->
-> [2]. [Deep Learning\] GELU (Gaussian Error Linerar Units) https://www.cnblogs.com/shiyublog/p/11121839.html
->
-> [3]. 从ReLU到GELU，一文概览神经网络的激活函数 https://mp.weixin.qq.com/s/PMPG804-zMDHUzH9Gy4NLw
