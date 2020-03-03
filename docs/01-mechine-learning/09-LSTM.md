@@ -1,6 +1,6 @@
 # LSTM
 
-> 参考资料：\[1\][Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+> 参考资料：\[1\].[Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)、\[2\].[（译）理解 LSTM 网络](https://blog.csdn.net/Jerr__y/article/details/58598296)、\[3\].[Keras中文文档](https://keras.io/zh/optimizers/) 、\[4\].[RNN 中为什么要采用 tanh，而不是 ReLU 作为激活函数？](https://www.zhihu.com/question/61265076)、\[5\]. [LSTM question](https://www.reddit.com/r/MachineLearning/comments/2t1rsp/lstm_question/)、\[6\].[LSTM该不该使用RELU？](https://blog.csdn.net/xygl2009/article/details/78855795)、\[7\].[在训练LSTM的时候使用除了Tanh/Sigmoid以外的激活函数效果都很差，是为什么？](https://www.zhihu.com/question/49272008?from=profile_question_card)、\[8\].[Keras中的LSTM](https://www.jianshu.com/p/3edff278f021)(主要用于参考Coding用)、\[9\].[理解LSTM在keras API中参数return_sequences和return_state](https://blog.csdn.net/u011327333/article/details/78501054)
 >
 > PS：不看不知道，原来RNNs和LSTM都是上个世纪诞生的产物，惊人啊！
 
