@@ -1,4 +1,4 @@
-# 集成学习考点
+# Bagging vs Boosting
 
 ## 问题1：Bagging？
 
@@ -85,4 +85,3 @@ AdaBoost的训练过程：
 
 - Bagging：由于有放回的随机选取，子数据集有相似性，Bagging后的bias与单个子模型的近似，不能显著降低bias；另一方面，若子模型独立，这时候可以显著降低variance，若子模型全部相同，variance不变，Bagging的模型介于完全独立和完全相同的中间（在Radom Forest中的特征候选是采样的），而且不同学习器的数据集也是采样的，不完全相同，因此是一定程度可以降低模型variance的。
 - Boosting：从优化的角度看，后一棵树的输入是建立在上一棵树的输出上，使用的forward-stagewise的贪心思想，在sequential地最小化Loss，因此bias自然逐步降低；但是，因为树与树之间是强相关的，子模型之和显然并不能显著降低variance。
-

@@ -40,7 +40,8 @@
 ## 树模型知识板块 <a id="02-tree-model"></a>
 
 * [决策树考点](02-tree-model/01-decision-tree.md)
-* [GBDT考点](02-tree-model/02-gbdt.md)
+* [Bagging vs Boosting](02-tree-model/02-bagging-boosting.md)
+* [GBDT考点](02-tree-model/03-gbdt.md)
 
 ## 基础算法板块 <a id="00-algorithm"></a>
 
