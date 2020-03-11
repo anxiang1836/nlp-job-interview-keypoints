@@ -4,9 +4,7 @@
 >
 > 参考资料：https://anxiang1836.github.io/2019/11/05/NLP_From_HMM_to_CRF/
 
-## 问题1：HMM的重要特点是什么？
-
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200311231318.png)
+## 问题1：HMM做了什么假设？
 
 HMM具有2个强假设：
 
@@ -24,7 +22,7 @@ HMM具有2个强假设：
 
 HMM为隐马尔科夫模型，MEMM为最大熵马尔科夫模型。
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200311231426.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200311231914.png)
 
 1. 从建模对象来看：
 
