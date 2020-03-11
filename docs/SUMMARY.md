@@ -13,7 +13,8 @@
 * [Attention](01-mechine-learning/07-attention.md)
 * [CNN](01-mechine-learning/08-CNN.md)
 * [LSTM](01-mechine-learning/09-LSTM.md)
-* [其他统计学习](01-mechine-learning/10-statistical-learning.md)
+* [CRF](01-mechine-learning/10-CRF.md)
+* [其他统计学习](01-mechine-learning/11-statistical-learning.md)
 
 ## Embedding知识板块 <a id="03-embedding"></a>
 

@@ -179,7 +179,10 @@ erf(x)&=\frac{1}{\sqrt\pi}\int_{-x}^x e^{-t^2}dt=\frac{2}{\sqrt\pi}\int_0^x e^{-
 \end{align}
 $$
 
-
+因为erf项，无解析表达式，可以近似表示为：
+$$
+erf(x)\approx \frac{2}{\sqrt \pi}tan(x)
+$$
 GELU的函数图像如下：
 
 <img src="https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200227002311.png" style="zoom:50%;" />
