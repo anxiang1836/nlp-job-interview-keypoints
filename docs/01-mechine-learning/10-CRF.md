@@ -6,7 +6,7 @@
 
 ## 问题1：HMM的重要特点是什么？
 
-<img src="https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/HMM.bmp" style="zoom:50%;" />
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200311231318.png)
 
 HMM具有2个强假设：
 
@@ -24,7 +24,7 @@ HMM具有2个强假设：
 
 HMM为隐马尔科夫模型，MEMM为最大熵马尔科夫模型。
 
-<img src="https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/MEMM.jpg" style="zoom:50%;" />
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200311231426.png)
 
 1. 从建模对象来看：
 
