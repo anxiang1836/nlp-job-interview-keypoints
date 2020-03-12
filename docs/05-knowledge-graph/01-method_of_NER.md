@@ -1,8 +1,34 @@
 # NER原理知识
 
-（这部分主要整理分析：CRF、BiLSTM-CRF、BiLSTM-Attention的相关知识）
+## 模型1：biLSTM-CRF
 
-## 模型1：[TENER](https://arxiv.org/pdf/1911.04474.pdf)
+> LSTM-softmax也可以做序列预测问题，但是为什么不行的呢？
+>
+> 答：softmax层的输出是相互独立的，即虽然BiLSTM学习到了上下文的信息，但是输出相互之间并没有影响，它只是在每一步挑选一个最大概率值的label输出。这样就会导致如B-person后再接一个B-person的问题。而crf中有转移特征，即它会考虑输出label之间的顺序性，所以考虑用crf去做BiLSTM的输出层。
+
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200311234228.png)
+
+**模型结构**
+
+第1层：Embedding层，将输入转换为字向量
+
+第2层：双向LSTM层，提取序列的上下文语义特征，并且return-sequence=True，返回完整的隐状态序列
+
+第3层：全连接层，将隐状态向量映射到与k维（k是标签数量），用于表示各个位置对于每种label的预测概率
+
+第4层：CRF层，训练的是一个参数为(k+2)*(k+2)的矩阵，表示状态转移矩阵，加的2即表示句子的首部与尾部的状态符
+
+> 模型的打分由2部分组成：一部分为LSTM输出的pi，一部分为CRF的转移矩阵的转移概率（这也对应到CRF的2个特征函数：(1)节点特征函数；(2)局部特征函数）
+
+## 模型2：biLSTM-LAN
+
+https://www.cnblogs.com/Determined22/p/7238342.html
+
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200311235155.png)
+
+
+
+## 模型3：[TENER](https://arxiv.org/pdf/1911.04474.pdf)
 
 参考资料：https://mp.weixin.qq.com/s/lmIau07zaGrr6rZs6XJmJA
 

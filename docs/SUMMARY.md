@@ -16,6 +16,12 @@
 * [CRF](01-mechine-learning/10-CRF.md)
 * [其他统计学习](01-mechine-learning/11-statistical-learning.md)
 
+## 树模型知识板块 <a id="02-tree-model"></a>
+
+* [决策树考点](02-tree-model/01-decision-tree.md)
+* [Bagging vs Boosting](02-tree-model/02-bagging-boosting.md)
+* [GBDT考点](02-tree-model/03-gbdt.md)
+
 ## Embedding知识板块 <a id="03-embedding"></a>
 
 * [Word2Vec](03-embedding/01-word2vec.md)
@@ -38,13 +44,11 @@
 * [远程监督](05-knowledge-graph/04-MIL.md)
 * [实体图谱推理](05-knowledge-graph/05-inference-base-KG.md)
 
-## 树模型知识板块 <a id="02-tree-model"></a>
-
-* [决策树考点](02-tree-model/01-decision-tree.md)
-* [Bagging vs Boosting](02-tree-model/02-bagging-boosting.md)
-* [GBDT考点](02-tree-model/03-gbdt.md)
-
 ## 基础算法板块 <a id="00-algorithm"></a>
 
 * [排序算法](00-algorithm/01-ranking-algorithm.md)
 * [动态规划-背包问题](00-algorithm/02-DP-algorithm.md)
+
+## 面试复盘整理 <a id="07-interview"></a>
+
+* [深圳麦盟科技](07-interview/00-maimenggroup.md)
