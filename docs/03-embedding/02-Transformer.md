@@ -161,7 +161,7 @@ $$
 
 不妨简记softmax函数为$$g(\cdot)$$，softmax得到的分布向量$$\hat y=g(X)$$。对于输入$$X$$的梯度为：
 $$
-\frac{\part g(X)}{\part X}=diag(\hat y)-\hat y \hat y^T
+\frac{\partial g(X)}{\partial X}=diag(\hat y)-\hat y \hat y^T
 $$
 把这个矩阵展开：
 
@@ -178,19 +178,18 @@ $$
 那么，则有：
 
 1. $$E(XY)=E(X)E(Y)=0\times 0 =0$$
-
 2.  
 
-3. $$
-   \begin{align}
-   D(XY) &= E(X^2\cdot Y^2)-[E(XY)]^2 \\
-         &= E(X^2)E(Y^2) - [E(X)E(Y)]^2 \\
-         &= E(X^2 -[E(X)]^2)E(Y^2 -[E(Y)]^2)-[E(X)E(Y)]^2 \\
-         &= D(X)D(Y)-[E(X)E(Y)]^2 \\
-         &= 1 \times 1 - (0 \times 0)^2 \\
-         &= 1
-   \end{align}
-   $$
+$$
+\begin{align}
+D(XY) &= E(X^2\cdot Y^2)-[E(XY)]^2 \\
+      &= E(X^2)E(Y^2) - [E(X)E(Y)]^2 \\
+      &= E(X^2 -[E(X)]^2)E(Y^2 -[E(Y)]^2)-[E(X)E(Y)]^2 \\
+      &= D(X)D(Y)-[E(X)E(Y)]^2 \\
+      &= 1 \times 1 - (0 \times 0)^2 \\
+      &= 1
+\end{align}
+$$
 
 这样$$\forall i=1,...,d_k$$，$$q_i \cdot k_i$$的均值是0，方差是1。又由期望和方差的性质，对相互独立的分量$$Z_i$$，有：
 $$
