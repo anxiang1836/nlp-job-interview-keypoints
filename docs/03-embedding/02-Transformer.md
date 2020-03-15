@@ -20,7 +20,7 @@ Transformer是谷歌提出的完全用Attention进行特征提取的模型，模
 
 ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315145904.png)
 
-### Encoder端：
+### 2.1 Encoder端
 
 由 N(原论文中`N=6`)个相同的Block堆叠而成，其中每个Block又由两个子模块构成：
 
@@ -35,7 +35,7 @@ Transformer是谷歌提出的完全用Attention进行特征提取的模型，模
 >
 > 3. 最后一个Block的输出作为整个 Encoder 端的输出。
 
-### Decoder端：
+### 2.2 Decoder端
 
 由 N(原论文中`N=6`)个相同的Block堆叠而成，其中每个大模块则由三个子模块构成：
 
@@ -62,7 +62,7 @@ Transformer是谷歌提出的完全用Attention进行特征提取的模型，模
 > 2. 其余Block接收的是同样是其前一个Block的输出；
 > 3. 最后一个模块的输出作为整个Decoder端的输出。
 
-### 其他细节部分
+### 2.3 其他细节部分
 
 1. **FFN模块**
    $$
@@ -130,8 +130,79 @@ Transformer网络由多个层组成，每个层都由多头注意力机制和前
 在数量级比较大的时候，**softmax会把概率全部分配给了最大值**，趋近于得到一个**One-Hot的向量**，进而导致SoftMax的梯度消失，造成更新困难。证明如下：
 
 假设固定输入$$X\in R^n$$不变，变化参数$$\beta$$，假设输入$$X$$中有唯一的最大值$$x_k$$，则有：
+$$
+\begin{align}
+\mathop{lim}\limits_{\beta \to + \infty}\sigma_\beta(X)_i  
+	&= \mathop{lim}\limits_{\beta \to + \infty} \frac{exp(\beta x_i)}{\sum_{j=1}^n exp(\beta x_j)} \\
+	\\
+	&=  \mathop{lim}\limits_{\beta \to + \infty} \frac{1}{1 + \sum_{j=1,j \ne i}^n exp\Big( \beta (x_j - x_i)\Big)}
+\end{align}
+$$
+不妨设$$g(X,\beta,i)=\sum^n_{j=1,j \ne i} exp \Big(\beta (x_j - x_i)\Big)$$，可以分类讨论一下：
 
+1. 当$$i=k$$，则$$\forall j \ne i, x_j-x_i<0$$，此时：
+   $$
+   \mathop{lim}\limits_{\beta \to + \infty}g(X,\beta,i)=0
+   $$
 
+2. 当$$i\ne k$$，则$$\exists j \ne i, x_j-x_i>0$$，此时：
+   $$
+   \mathop{lim}\limits_{\beta \to + \infty}g(X,\beta,i)=+\infty
+   $$
+
+因此，结合上面的推导，可以得到：
+$$
+\mathop{lim}\limits_{\beta \to + \infty} \sigma_\beta(X)_i= 
+	\left\{\begin{align}1,i=k\\\\0,i\ne k\end{align}\right.
+$$
+即，当$$\beta$$取无穷大时，非标准softmax的输出收敛到一个one-hot向量，其中最大输入对应的输出值是1，其他输出是0。
+
+然后我们看，这样趋向于输出One-Hot对于梯度的影响。
+
+不妨简记softmax函数为$$g(\cdot)$$，softmax得到的分布向量$$\hat y=g(X)$$。对于输入$$X$$的梯度为：
+$$
+\frac{\part g(X)}{\part X}=diag(\hat y)-\hat y \hat y^T
+$$
+把这个矩阵展开：
+
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315221017.png)
+
+根据前面，当X元素都比较大的时候，会产生一个近似One-Hot的向量，那么此时，上面的矩阵就近似为0了。
+
+下面再看**维度**与**点积**之间得到关系，为什么用**维度的根号**来缩放？
+
+假设向量$$q$$和$$k$$的各个分量是互相独立的随机变量，均值是0，方差是1，那么点积$$q \cdot k$$的均值是0，方差是$$d_k$$。下面是推导：
+
+对于$$\forall i=1,...,d_k$$，$$q_i$$和$$k_i$$都是随机变量，为了方便书写，不妨记$$X=q_i$$，$$Y=k_i$$。这样有：$$D(X)=D(Y)=1$$，$$E(X)=E(Y)=0$$
+
+那么，则有：
+
+1. $$E(XY)=E(X)E(Y)=0\times 0 =0$$
+
+2.  
+
+3. $$
+   \begin{align}
+   D(XY) &= E(X^2\cdot Y^2)-[E(XY)]^2 \\
+         &= E(X^2)E(Y^2) - [E(X)E(Y)]^2 \\
+         &= E(X^2 -[E(X)]^2)E(Y^2 -[E(Y)]^2)-[E(X)E(Y)]^2 \\
+         &= D(X)D(Y)-[E(X)E(Y)]^2 \\
+         &= 1 \times 1 - (0 \times 0)^2 \\
+         &= 1
+   \end{align}
+   $$
+
+这样$$\forall i=1,...,d_k$$，$$q_i \cdot k_i$$的均值是0，方差是1。又由期望和方差的性质，对相互独立的分量$$Z_i$$，有：
+$$
+E(\sum_i Z_i)=\sum_i E(Z_i) \\
+\\
+D(\sum_i Z_i)=\sum_i D(Z_i) \\
+$$
+所以有$$q \cdot k$$的均值是$$E(q \cdot k)=0$$，方差$$D(q \cdot k)=d_k$$。**方差越大也就说明，点积的数量级越大（以越大的概率取大值）**。那么一个自然的做法就是把方差稳定到1，做法是将点积除以$$\sqrt{d_k}$$ ，这样有：
+$$
+D(\frac{q \cdot k}{\sqrt{d_k}})=\frac{d_k}{(\sqrt{d_k})^2}=1
+$$
+**将方差控制为1，也就有效地控制了前面提到的梯度消失的问题**。
 
 ## 问题6：Transformer与seq2seq比优势在与什么？
 
