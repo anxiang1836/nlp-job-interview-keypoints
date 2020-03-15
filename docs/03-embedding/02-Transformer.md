@@ -129,15 +129,13 @@ Transformer网络由多个层组成，每个层都由多头注意力机制和前
 
 在数量级比较大的时候，**softmax会把概率全部分配给了最大值**，趋近于得到一个**One-Hot的向量**，进而导致SoftMax的梯度消失，造成更新困难。证明如下：
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315210756.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315212952.png)
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315210939.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315213123.png)
 
 下面，我们再看，为什么使用维度的根号来缩放呢？维度与点定的大小有什么关系呢？
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315211625.png)
-
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315212101.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315213321.png)
 
 ## 问题6：Transformer与seq2seq比优势在与什么？
 
