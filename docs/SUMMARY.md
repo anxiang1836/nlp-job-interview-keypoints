@@ -27,9 +27,11 @@
 ## Embedding知识板块 <a id="03-embedding"></a>
 
 * [Word2Vec](03-embedding/01-word2vec.md)
-* [Bert](03-embedding/02-bert.md)
-* [XLNet](03-embedding/03-XLNet.md)
-* [Albert](03-embedding/04-ALBERT.md)
+* [Transformer](03-embedding/02-Transformer.md)
+* [Bert](03-embedding/03-XLNet.md)
+* [XLNet](03-embedding/04-XLNet.md)
+* [Albert](03-embedding/05-ALBERT.md)
+* [Roberta](03-embedding/06-RoBERTa.md)
 
 ## 文本分类知识板块 <a id="04-text-classification"></a>
 
@@ -42,6 +44,10 @@
 * [基于aspect的SA](09-sentiment-analysis/00-aspect-based-SA.md)
 
 
+## 意图识别板块 <a id="07-intention-recognition"></a>
+
+* [意图识别与槽填充](07-intention-recognition/00-slot-filling.md)
+
 ## 知识图谱板块 <a id="05-info-extraction"></a>
 
 * [NER方法](05-knowledge-graph/01-method_of_NER.md)
@@ -51,15 +57,6 @@
 * [实体图谱推理](05-knowledge-graph/05-inference-base-KG.md)
 * [远程监督](05-knowledge-graph/04-MIL.md)
 * [事件图谱/事理图谱](05-knowledge-graph/00-envent-graph.md)
-
-## 意图识别板块 <a id="07-intention-recognition"></a>
-
-* [意图识别与槽填充](07-intention-recognition/00-slot-filling.md)
-
-## 基础算法板块 <a id="00-algorithm"></a>
-
-* [排序算法](00-algorithm/01-ranking-algorithm.md)
-* [动态规划-背包问题](00-algorithm/02-DP-algorithm.md)
 
 ## 面试复盘整理 <a id="08-interview"></a>
 

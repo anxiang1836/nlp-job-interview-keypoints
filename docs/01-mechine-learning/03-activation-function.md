@@ -181,7 +181,7 @@ $$
 
 因为erf项，无解析表达式，可以近似表示为：
 $$
-erf(x)\approx \frac{2}{\sqrt \pi}tan(x)
+erf(x)\approx \frac{2}{\sqrt \pi}tanh(x)
 $$
 GELU的函数图像如下：
 
