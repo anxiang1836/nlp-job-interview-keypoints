@@ -1,4 +1,4 @@
-# Transformer
+Transformer
 
 > 本部分整理Transformer相关的的知识点内，2018年之后做NLP的如果说自己不会bert，恐怕是入行都是又困的，Transformer的Encoder正是Bert的基本组件。
 >
@@ -129,13 +129,9 @@ Transformer网络由多个层组成，每个层都由多头注意力机制和前
 
 在数量级比较大的时候，**softmax会把概率全部分配给了最大值**，趋近于得到一个**One-Hot的向量**，进而导致SoftMax的梯度消失，造成更新困难。证明如下：
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315212952.png)
+假设固定输入$$X\in R^n$$不变，变化参数$$\beta$$，假设输入$$X$$中有唯一的最大值$$x_k$$，则有：
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315213123.png)
 
-下面，我们再看，为什么使用维度的根号来缩放呢？维度与点定的大小有什么关系呢？
-
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200315213321.png)
 
 ## 问题6：Transformer与seq2seq比优势在与什么？
 
