@@ -14,13 +14,15 @@
 * [CNN](01-mechine-learning/08-CNN.md)
 * [LSTM](01-mechine-learning/09-LSTM.md)
 * [CRF](01-mechine-learning/10-CRF.md)
-* [其他统计学习](01-mechine-learning/11-statistical-learning.md)
+* [Jieba分词原理](01-mechine-learning/11-jieba.md)
+* [其他统计学习](01-mechine-learning/12-statistical-learning.md)
 
 ## 树模型知识板块 <a id="02-tree-model"></a>
 
 * [决策树考点](02-tree-model/01-decision-tree.md)
 * [Bagging vs Boosting](02-tree-model/02-bagging-boosting.md)
 * [GBDT考点](02-tree-model/03-gbdt.md)
+* [Xgboost](02-tree-model/04-xgboost.md)
 
 ## Embedding知识板块 <a id="03-embedding"></a>
 
@@ -35,20 +37,30 @@
 * [TextCNN](04-text-classification/01-textcnn.md)
 * [DPCNN](04-text-classification/02-DPCNN.md)
 
+## 细粒度情感分析板块 <a id="09-sentiment-analysis"></a>
+
+* [基于aspect的SA](09-sentiment-analysis/00-aspect-based-SA.md)
+
+
 ## 知识图谱板块 <a id="05-info-extraction"></a>
 
-* [事件图谱/事理图谱](05-knowledge-graph/00-envent-graph.md)
 * [NER方法](05-knowledge-graph/01-method_of_NER.md)
+* [实体统一/消歧](05-knowledge-graph/06-Entity-Resolution.md)
 * [CNN for RE](05-knowledge-graph/02-CNN-for-RE.md)
 * [LSTM for RE](05-knowledge-graph/03-LSTM-for-RE.md)
-* [远程监督](05-knowledge-graph/04-MIL.md)
 * [实体图谱推理](05-knowledge-graph/05-inference-base-KG.md)
+* [远程监督](05-knowledge-graph/04-MIL.md)
+* [事件图谱/事理图谱](05-knowledge-graph/00-envent-graph.md)
+
+## 意图识别板块 <a id="07-intention-recognition"></a>
+
+* [意图识别与槽填充](07-intention-recognition/00-slot-filling.md)
 
 ## 基础算法板块 <a id="00-algorithm"></a>
 
 * [排序算法](00-algorithm/01-ranking-algorithm.md)
 * [动态规划-背包问题](00-algorithm/02-DP-algorithm.md)
 
-## 面试复盘整理 <a id="07-interview"></a>
+## 面试复盘整理 <a id="08-interview"></a>
 
-* [深圳麦盟科技](07-interview/00-maimenggroup.md)
+* [深圳麦盟科技](08-interview/00-maimenggroup.md)
