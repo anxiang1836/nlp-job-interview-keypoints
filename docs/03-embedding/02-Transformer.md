@@ -1,4 +1,4 @@
-Transformer
+# Transformer
 
 > 本部分整理Transformer相关的的知识点内，2018年之后做NLP的如果说自己不会bert，恐怕是入行都是又困的，Transformer的Encoder正是Bert的基本组件。
 >
