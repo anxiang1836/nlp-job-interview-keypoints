@@ -8,6 +8,7 @@
 * [初始化](01-mechine-learning/02-initialization.md)
 * [激活函数](01-mechine-learning/03-activation-function.md)
 * [正则化](01-mechine-learning/04-normalization.md)
+* [Dropout](01-mechine-learning/13-dropout.md)
 * [损失函数](01-mechine-learning/05-loss-function.md)
 * [优化方法](01-mechine-learning/06-optimization-method.md)
 * [Attention](01-mechine-learning/07-attention.md)
