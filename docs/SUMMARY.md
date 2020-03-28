@@ -51,6 +51,7 @@
 
 ## 知识图谱板块 <a id="05-info-extraction"></a>
 
+* [Brat标注工具](05-knowledge-graph/07-Brat.md)
 * [NER方法](05-knowledge-graph/01-method_of_NER.md)
 * [实体统一/消歧](05-knowledge-graph/06-Entity-Resolution.md)
 * [CNN for RE](05-knowledge-graph/02-CNN-for-RE.md)
