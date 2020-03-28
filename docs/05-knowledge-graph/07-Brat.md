@@ -99,7 +99,7 @@ find medical -name '*.txt' |sed -e 's|\.txt|.ann|g' |xargs touch
 
 - 问题1：当2个实体存在包含关系时，怎么办？
 
-  <img src="https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/image-20200328170440499.png" style="zoom:50%;" />
+  <img src="https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/image-20200328170440499.png" style="zoom:65%;" />
 
 标注规则规定如下：
 
@@ -109,7 +109,7 @@ find medical -name '*.txt' |sed -e 's|\.txt|.ann|g' |xargs touch
 
 - 问题2：出现标注标准不同的情况，怎么办？
 
-  <img src="https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200328231652.png" style="zoom:50%;" />
+  <img src="https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200328231652.png" style="zoom:75%;" />
 
   规定标注规则如下：
 
