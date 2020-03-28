@@ -25,6 +25,14 @@
 * [GBDT考点](02-tree-model/03-gbdt.md)
 * [Xgboost](02-tree-model/04-xgboost.md)
 
+## 知识图谱板块 <a id="05-info-extraction"></a>
+
+* [Brat标注](05-knowledge-graph/04-Brat.md)
+* [NER](05-knowledge-graph/01-NER.md)
+* [NRE](05-knowledge-graph/02-NRE.md)
+* [远程监督](05-knowledge-graph/03-MIL.md)
+* [事件图谱/事理图谱](05-knowledge-graph/00-envent-graph.md)
+
 ## Embedding知识板块 <a id="03-embedding"></a>
 
 * [Word2Vec](03-embedding/01-word2vec.md)
@@ -40,26 +48,6 @@
 * [TextCNN](04-text-classification/01-textcnn.md)
 * [DPCNN](04-text-classification/02-DPCNN.md)
 
-## 细粒度情感分析板块 <a id="09-sentiment-analysis"></a>
-
-* [基于aspect的SA](09-sentiment-analysis/00-aspect-based-SA.md)
-
-
-## 意图识别板块 <a id="07-intention-recognition"></a>
-
-* [意图识别与槽填充](07-intention-recognition/00-slot-filling.md)
-
-## 知识图谱板块 <a id="05-info-extraction"></a>
-
-* [Brat标注工具](05-knowledge-graph/07-Brat.md)
-* [NER方法](05-knowledge-graph/01-method_of_NER.md)
-* [实体统一/消歧](05-knowledge-graph/06-Entity-Resolution.md)
-* [CNN for RE](05-knowledge-graph/02-CNN-for-RE.md)
-* [LSTM for RE](05-knowledge-graph/03-LSTM-for-RE.md)
-* [实体图谱推理](05-knowledge-graph/05-inference-base-KG.md)
-* [远程监督](05-knowledge-graph/04-MIL.md)
-* [事件图谱/事理图谱](05-knowledge-graph/00-envent-graph.md)
-
 ## 面试复盘整理 <a id="08-interview"></a>
 
 * [深圳麦盟科技](08-interview/00-maimenggroup.md)
@@ -67,3 +55,4 @@
 * [华为海思](08-interview/02-huaweihaisi.md)
 * [恒生聚源](08-interview/03-hengshengjuyuan.md)
 * [惠每医疗](08-interview/04-huimei.md)
+* [平安科技](08-interview/05-pingan.md)
