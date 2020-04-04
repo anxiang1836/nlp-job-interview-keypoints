@@ -59,15 +59,14 @@ python2 standalone.py
 ### 2.0 标注过程
 
 1. 将待标注的文本数据copy到Brat的目录的data下：`/opt/brat-v1.3_Crunchy_Frog/data/medecial`
+
 2. cd到上述文件夹中，然后对应生成空的`ann`文件（或者是运行第3章的预标注的脚本来生成）：
 
-```bash
-find medical -name '*.txt' |sed -e 's|\.txt|.ann|g' |xargs touch
-```
+   ```bash
+   find medical -name '*.txt' |sed -e 's|\.txt|.ann|g' |xargs touch
+   ```
 
-3. 修改支持中文，记住待标注的文件名别有中文，要不然brat是不识别的。
-
-   到./server/src/projectconfig.py第163行，修改为如下：
+3. 修改支持中文，记住待标注的文件名别有中文，要不然brat是不识别的。到./server/src/projectconfig.py第163行，修改为如下：
 
    ```python
    n = re.sub(u'[^a-zA-Z\u4e00-\u9fa5<>,0-9_-]', '_', n)
@@ -75,8 +74,9 @@ find medical -name '*.txt' |sed -e 's|\.txt|.ann|g' |xargs touch
 
 4. 在`medecial`文件夹下，创建`annotation.conf`和`visual.conf`。
 
-   - `annotation.conf`：用于定义Schema
-   - `visual.conf`：用于定义可视化的颜色和显示的别称
+   `annotation.conf`：用于定义Schema
+
+   `visual.conf`：用于定义可视化的颜色和显示的别称
 
 ### 2.1  标注Schema
 
