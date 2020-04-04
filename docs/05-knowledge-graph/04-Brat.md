@@ -190,7 +190,7 @@ find medical -name '*.txt' |sed -e 's|\.txt|.ann|g' |xargs touch
 
 效率随着每篇文章的长度、词典的长度、文本集中文本个数增加而增加。
 
-### 3.2 用AC自动机实现模式的匹配算法
+### 3.2 AC自动机算法原理
 
 > Aho-Corasick算法是**多模式匹配**中的经典算法，该算法在1975年产生于贝尔实验室，是著名的多模匹配算法，目前在实际应用中较多。
 >
@@ -206,6 +206,32 @@ find medical -name '*.txt' |sed -e 's|\.txt|.ann|g' |xargs touch
 
      ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200402162147.png)
 
+     ```javascript
+     class Trie {
+           constructor() {
+               this.root = new Node("root");
+           }
+           insert(word) {
+               var cur = this.root;
+               for (var i = 0; i < word.length; i++) {
+                   var c = word[i];
+                   var node = cur.children[c];
+                   if (!node) {
+                       node = cur.children[c] = new Node(word[i]);
+                   }
+                   cur = node;
+               }
+               cur.pattern = word; //防止最后收集整个字符串用
+               cur.endCount++; //这个字符串重复添加的次数
+           }
+       }
+       function createGoto(trie, patterns) {
+           for (var i = 0; i < patterns.length; i++) {
+               trie.insert(patterns[i]);
+           }
+       }
+     ```
+
      我们尝试用它处理字符串sher。理想情况下是这样：
 
      ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200403114045.png)
@@ -216,18 +242,116 @@ find medical -name '*.txt' |sed -e 's|\.txt|.ann|g' |xargs touch
 
    - **1.2 添加失配指针**
 
-     
+     很显然，对于每个节点，其失配指针应该指向其他子树中的表示同一字符的那些节点，并且它与其子树能构成剩下的最长后缀。
 
-   - 
+     > 即，我们要匹配`sher`, 我们已经在某一子树中命中了`sh`，那么我们希望能在另一个子树中命中`er`。
 
-     
+     ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200404092715.png)
 
-     
+     现在的问题是，如何求fail指针？
 
-     
+     我们发现`root`的每个儿子的fail都指向`root`（前缀和后缀是不会包含整个串的）。
 
-     
+     > 也就是上图中root所连的`s`和`h`的fail都指向root。若已经求得`sh`所在点的fail，我们来考虑如何求`she`所在点的fail。
+     >
+     > 根据`sh`所在点的fail得到`h`是`sh`的最长后缀，而`h`又有儿子`e`，因此`she`的最长后缀应该是`he`，其fail指针就指向`he`所在点。
 
-     
+     **概括AC自动机求fail指针的过程**：
 
-     
+     1. 1.对整个字典树进行宽度优先遍历。
+
+     2. 若当前搜索到点`x`，那么对于`x`的第`i`个儿子(也就是代表字符`i`的儿子)：循环迭代`x`的兄弟节点，直到跳到某个点也有`i`这个儿子，`x`的第`i`个儿子的fail就指向这个点的儿子`i`。
+
+        ```javascript
+        function createFail(ac) {
+            var root = ac.root;
+            var queue = [root]; //root所在层为第0层
+            while (queue.length) {
+                //广度优先遍历
+                var node = queue.shift();
+                if (node) {
+                    //将其孩子逐个加入列队
+                    for (var i in node.children) {
+                        var child = node.children[i];
+                        if (node === root) {
+                            child.fail = root; //第1层的节点的fail总是指向root
+                        } else {
+                            var p = node.fail; //第2层以下的节点, 其fail是在另一个分支上
+                            while (p) {
+                                //遍历它的孩子，看它们有没与当前孩子相同字符的节点
+                                if (p.children[i]) {
+                                    child.fail = p.children[i];
+                                    break;
+                                }
+                                p = p.fail;
+                            }
+                            if (!p) {
+                                child.fail = root;
+                            }
+                        }
+                        queue.push(child);
+                    }
+                }
+            }
+        }
+        ```
+
+   - **1.3 模式匹配**
+
+     我们从根节点开始查找，如果它的孩子能命中目标串的第1个字符串，那么我们就从这个孩子的孩子中再尝试命中目标串的第2个字符串。否则，我们就顺着它的失配指针，跳到另一个分支，找其他节点。
+
+     如果都没有命中，就从根节点重头再来。
+
+     > 当我们节点存在表示有字符串在它这里结束的标识时（如endCound, isEnd），我们就可以确认这字符串已经命中某一个模式串，将它放到结果集中。
+     >
+     > 如果这时长字符串还没有到尽头，我们继续收集其他模式串。
+
+   ### 3.3 ahocorasick库
+
+   pyahocorasick是AC算法在python实现的工具库，直接pip install安装可能会有问题，用conda安装实现吧。
+
+   ```bash
+   conda install -c https://conda.anaconda.org/conda-forge pyahocorasick
+   ```
+
+   具体的食用方法如下：
+
+   ```python
+   import ahocorasick
+   # https://blog.csdn.net/u010569893/article/details/97136696
+   def make_AC(AC, word_set):
+       for word in word_set:
+           AC.add_word(word,word)
+       return AC
+   key_list = ["我爱你","爱你"]
+   AC_KEY = ahocorasick.Automaton()
+   AC_KEY = make_AC(AC_KEY, set(key_list))
+   AC_KEY.make_automaton()
+   
+   content = "我爱你，塞北的雪，爱你，我爱你！"
+   for item in AC_KEY.iter(content):
+       word = item[1]
+       end = item[0]
+       start = end - len(word) + 1
+       print(start,end,word)
+   ```
+
+   输出结果为：
+
+   ```bash
+   0 2 我爱你
+   1 2 爱你
+   9 10 爱你
+   12 14 我爱你
+   13 14 爱你
+   ```
+
+   
+
+   
+
+   
+
+   
+
+   
