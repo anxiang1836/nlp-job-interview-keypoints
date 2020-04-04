@@ -204,7 +204,7 @@ find medical -name '*.txt' |sed -e 's|\.txt|.ann|g' |xargs touch
 
 将模式串逐字符放进Trie树，如下图。
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200404144037.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200402162147.png)
 
 ```javascript
 class Trie {
@@ -234,7 +234,7 @@ class Trie {
 
 我们尝试用它处理字符串sher。理想情况下是这样：
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200404144129.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200403114045.png)
 
 > 很遗憾，前缀树只会顺着某一路径往下查找，最多到叶子节点折回树节点，继续选择另一条路径。
 >
@@ -246,7 +246,7 @@ class Trie {
 
 > 即，我们要匹配`sher`, 我们已经在某一子树中命中了`sh`，那么我们希望能在另一个子树中命中`er`。
 
-![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200404144226.png)
+![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200404092715.png)
 
 现在的问题是，如何求fail指针？
 
