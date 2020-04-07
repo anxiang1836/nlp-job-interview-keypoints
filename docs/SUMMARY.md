@@ -25,6 +25,10 @@
 * [GBDT考点](02-tree-model/03-gbdt.md)
 * [Xgboost](02-tree-model/04-xgboost.md)
 
+## 相似匹配板块 <a id="06-similarity"></a>
+
+* [Ranking Loss](06-similarity/01-Ranking_Loss.md)
+
 ## 知识图谱板块 <a id="05-info-extraction"></a>
 
 * [Brat标注](05-knowledge-graph/04-Brat.md)
