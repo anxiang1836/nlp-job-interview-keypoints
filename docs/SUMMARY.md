@@ -28,6 +28,8 @@
 ## 相似匹配板块 <a id="06-similarity"></a>
 
 * [Ranking Loss](06-similarity/01-Ranking_Loss.md)
+* [匹配模型](06-similarity/02-match-model.md)
+
 
 ## 知识图谱板块 <a id="05-info-extraction"></a>
 

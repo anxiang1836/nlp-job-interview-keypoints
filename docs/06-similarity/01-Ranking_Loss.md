@@ -123,9 +123,9 @@ $$
 
 我们可能遇到三种情况：
 
-- easy triplet：$$d(r_a,r_n)>d(r_a,r_p) + m$$。也就是说，比起正样本来说，<font color=Blue>负样本</font>和**锚点样本**已经有足够的距离了（即是大于$$m$$）。此时loss为0，网络参数将不会继续更新。
-- hard triplet：$$d(r_a,r_n) < d(r_a,r_p)$$。<font color=Blue>负样本</font>比起<font color=Red>正样本</font>，更接近**锚点样本**，此时loss为正值（并且比$$m$$大），网络可以继续更新。
-- semi-hard triplet：$$d(r_a,r_p) < d(r_a,r_n)<d(r_a,r_p)+m$$。<font color=Blue>负样本</font>到**锚点样本**的距离比起<font color=Red>正样本</font>来说，虽然是大于后者，但是并没有大于设定的阈值$$m$$，此时loss仍然为正值，但是小于$$m$$，此时网络可以继续更新。
+- **easy triplet**：$$d(r_a,r_n)>d(r_a,r_p) + m$$。也就是说，比起正样本来说，<font color=Blue>负样本</font>和**锚点样本**已经有足够的距离了（即是大于$$m$$）。此时loss为0，网络参数将不会继续更新。
+- **hard triplet**：$$d(r_a,r_n) < d(r_a,r_p)$$。<font color=Blue>负样本</font>比起<font color=Red>正样本</font>，更接近**锚点样本**，此时loss为正值（并且比$$m$$大），网络可以继续更新。
+- **semi-hard triplet**：$$d(r_a,r_p) < d(r_a,r_n)<d(r_a,r_p)+m$$。<font color=Blue>负样本</font>到**锚点样本**的距离比起<font color=Red>正样本</font>来说，虽然是大于后者，但是并没有大于设定的阈值$$m$$，此时loss仍然为正值，但是小于$$m$$，此时网络可以继续更新。
 
 ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200408013120.png)
 

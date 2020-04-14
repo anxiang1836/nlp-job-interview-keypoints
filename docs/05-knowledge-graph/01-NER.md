@@ -32,7 +32,7 @@ BiLSTM的每个step上的输出映射到等同于标签类别数的维度，比�
 
 ## 模型2：biLSTM-LAN
 
-https://www.cnblogs.com/Determined22/p/7238342.html
+http://www.dataguru.cn/article-15211-1.html
 
 ![](https://raw.githubusercontent.com/anxiang1836/FigureBed/master/img/20200311235155.png)
 
