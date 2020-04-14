@@ -62,3 +62,4 @@
 * [恒生聚源](08-interview/03-hengshengjuyuan.md)
 * [惠每医疗](08-interview/04-huimei.md)
 * [平安科技](08-interview/05-pingan.md)
+* [镁佳科技](08-interview/06-Megatronix.md)
