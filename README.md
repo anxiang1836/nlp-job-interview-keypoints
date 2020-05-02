@@ -1,6 +1,6 @@
 # NLP知识点-分版块归纳手册
 
-GitBook链接：https://nlp-interview-keypoints.gitbook.io/nlp-job-interview-keypoints/
+GitBook链接：https://anxiang1836.gitbook.io/nlp-keypoints/
 
 ## 前言
 
