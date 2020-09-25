@@ -12,9 +12,9 @@
 * [损失函数](01-mechine-learning/05-loss-function.md)
 * [优化方法](01-mechine-learning/06-optimization-method.md)
 * [Attention](01-mechine-learning/07-attention.md)
-* [CNN](01-mechine-learning/08-CNN.md)
-* [LSTM](01-mechine-learning/09-LSTM.md)
-* [CRF](01-mechine-learning/10-CRF.md)
+* [CNN](01-mechine-learning/08-cnn.md)
+* [LSTM](01-mechine-learning/09-lstm.md)
+* [CRF](01-mechine-learning/10-crf.md)
 * [Jieba分词原理](01-mechine-learning/11-jieba.md)
 * [其他统计学习](01-mechine-learning/12-statistical-learning.md)
 
@@ -27,39 +27,39 @@
 
 ## 相似匹配板块 <a id="06-similarity"></a>
 
-* [Ranking Loss](06-similarity/01-Ranking_Loss.md)
+* [Ranking Loss](06-similarity/01-ranking_loss.md)
 * [匹配模型](06-similarity/02-match-model.md)
-
 
 ## 知识图谱板块 <a id="05-info-extraction"></a>
 
-* [Brat标注](05-knowledge-graph/04-Brat.md)
-* [NER](05-knowledge-graph/01-NER.md)
-* [NRE](05-knowledge-graph/02-NRE.md)
-* [远程监督](05-knowledge-graph/03-MIL.md)
-* [事件图谱/事理图谱](05-knowledge-graph/00-envent-graph.md)
+* [Brat标注](05-info-extraction/04-brat.md)
+* [NER](05-info-extraction/01-ner.md)
+* [NRE](05-info-extraction/02-nre.md)
+* [远程监督](05-info-extraction/03-mil.md)
+* [事件图谱/事理图谱](05-info-extraction/00-envent-graph.md)
 
 ## Embedding知识板块 <a id="03-embedding"></a>
 
 * [Word2Vec](03-embedding/01-word2vec.md)
-* [Transformer](03-embedding/02-Transformer.md)
-* [Bert](03-embedding/03-XLNet.md)
-* [XLNet](03-embedding/04-XLNet.md)
-* [Albert](03-embedding/05-ALBERT.md)
-* [Roberta](03-embedding/06-RoBERTa.md)
+* [Transformer](03-embedding/02-transformer.md)
+* [Bert](03-embedding/bert.md)
+* [XLNet](03-embedding/04-xlnet.md)
+* [Albert](03-embedding/05-albert.md)
+* [Roberta](03-embedding/06-roberta.md)
 
 ## 文本分类知识板块 <a id="04-text-classification"></a>
 
 * [FastText](04-text-classification/00-fasttext.md)
 * [TextCNN](04-text-classification/01-textcnn.md)
-* [DPCNN](04-text-classification/02-DPCNN.md)
+* [DPCNN](04-text-classification/02-dpcnn.md)
 
 ## 面试复盘整理 <a id="08-interview"></a>
 
-* [深圳麦盟科技](08-interview/00-maimenggroup.md)
-* [V哥面的知识图谱](08-interview/01-V-interview.md)
-* [华为海思](08-interview/02-huaweihaisi.md)
-* [恒生聚源](08-interview/03-hengshengjuyuan.md)
-* [惠每医疗](08-interview/04-huimei.md)
+* [MM科技](08-interview/00-maimenggroup.md)
+* [V哥面的知识图谱](08-interview/01-v-interview.md)
+* [HS](08-interview/02-huaweihaisi.md)
+* [HSJY](08-interview/03-hengshengjuyuan.md)
+* [HM医疗](08-interview/04-huimei.md)
 * [平安科技](08-interview/05-pingan.md)
-* [镁佳科技](08-interview/06-Megatronix.md)
+* [M科技](08-interview/06-megatronix.md)
+
