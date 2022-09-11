@@ -14,15 +14,15 @@ Lattice-LSTM是否增加远程信息取决于是否有词信息，一个节点�
 
 模型结构如下：
 
-<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912002327.png" style="zoom:85%;" />
+![](https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912002327.png)
 
 ##  1: 引入“字符-单词对”概念
 
-用$s={c_1, c_2, ..., c_n}$表示中文句子，其中$c_i$表示第$i$个字。
+用$$s={c_1, c_2, ..., c_n}$$表示中文句子，其中$$c_i$$表示第$i$个字。
 
-用$\stackrel{\longrightarrow}{ws_i}$表表示分配给第$i$个字符的候选词集，其中的词语用词典 D 在句子中遍历得到，候选词集的词是以第$i$个字符为**结尾**的词；
+用$$\stackrel{\longrightarrow}{ws_i}$$表表示分配给第$$i$$个字符的候选词集，其中的词语用词典 D 在句子中遍历得到，候选词集的词是以第$i$个字符为**结尾**的词；
 
-用$\stackrel{\longleftarrow}{ws_i}$表表示分配给第$i$个字符的候选词集，其中的词语用词典 D 在句子中遍历得到，候选词集的词是以第$i$个字符为**开头**的词； 
+用$$\stackrel{\longleftarrow}{ws_i}$$表表示分配给第$$i$$个字符的候选词集，其中的词语用词典 D 在句子中遍历得到，候选词集的词是以第$$i$$个字符为**开头**的词； 
 
 > 这样，对于同一个char，在正向LSTM和反向LSTM的时候 ，会分别挂上 不同的词；
 
