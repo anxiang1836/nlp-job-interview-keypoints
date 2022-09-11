@@ -12,7 +12,7 @@
 
 模型结构如下：
 
-<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912010500.png" style="zoom:50%;" />
+<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912010500.png" style="zoom:85%;" />
 
 ##  1: 融合词汇信息
 
@@ -27,7 +27,7 @@
 - E：当前字为词的词尾；
 - S：当前自独立可以成词的词：
 
-![](https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912012013.png)
+<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912012013.png" style="zoom:85%;" />
 
 
 

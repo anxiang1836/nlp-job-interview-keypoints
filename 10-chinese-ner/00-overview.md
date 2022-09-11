@@ -25,7 +25,7 @@
 > - Porous Lattice Transformer Encoder for Chinese NER(ACL 2020)
 > - LEBERT: Lexicon Enhanced Chinese Sequence Labelling Using BERT Adapter(ACL2021)
 
-<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220911214857.png" style="zoom:45%;" />
+<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220911214857.png" style="zoom:85%;" />
 
 PS：我排除了一些Graph NetWork有关的paper（主要是感觉模型略微有一些花哨，我又不是很涉略图神经网络）后面有精力想拓展的可以再进行展开：
 

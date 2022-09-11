@@ -19,7 +19,7 @@
 
 受到位置向量表征的启发，FLAT设计了一种position encoding来融合Lattice 结构，对于每一个字符和词汇都构建两个head position encoding 和tail position encoding，这种方式可以重构原有的Lattice结构，如下图。
 
-<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912015715.png" style="zoom:50%;" />
+<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912015715.png" style="zoom:85%;" />
 
 这样铺平之后，直接做self-attention，建模字符与所有词汇信息间的交互。将Lattice结构展平，将其从一个有向无环图展平为一个平面的Flat-Lattice Transformer结构，由多个span构成：每个字符的head和tail是相同的，每个词汇的head和tail是skipped的。
 
@@ -33,7 +33,9 @@
 
 每个token都有head和tail这样2个位置信息，所以，作者设计：每2个token间，由4种相对距离表示$x_i$和$x_j$之间的关系：head-head，head-tail，tail-head，head-tail这样的相对位置信息，如下图：
 
-<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912020717.png" style="zoom:50%;" />
+<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912020717.png" style="zoom:85%;" />
+
+
 $$
 d_{ij}^{(hh)}=head[i]-head[j]
 $$

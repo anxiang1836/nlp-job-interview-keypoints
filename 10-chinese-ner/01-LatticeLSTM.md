@@ -14,7 +14,7 @@
 
 如下图所示，门控单元用于将来自不同路径的信息动态传送到每个字符，不会受到分词偏差的影响。
 
-<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220911224720.png" style="zoom:50%;" />
+<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220911224720.png" style="zoom:85%;" />
 
 ## 1: 整体模型构成
 
@@ -22,7 +22,7 @@
 
 Lattice是一个有向无环图，词汇的开始和结束字符决定了其位置。Lattice LSTM结构则融合了词汇信息到原生的LSTM中。
 
-<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220911231755.png" style="zoom:80%;" />
+<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220911231755.png" style="zoom:100%;" />
 
 Lattice LSTM引入了一个word cell结构，对于当前的字符，融合以该字符结束的所有word信息，如对于「店」融合了「人和药店」和「药店」的信息。 
 

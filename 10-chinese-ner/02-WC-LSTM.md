@@ -14,7 +14,7 @@ Lattice-LSTM是否增加远程信息取决于是否有词信息，一个节点�
 
 模型结构如下：
 
-<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912002327.png" style="zoom:50%;" />
+<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912002327.png" style="zoom:85%;" />
 
 ##  1: 引入“字符-单词对”概念
 
