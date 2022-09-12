@@ -10,6 +10,7 @@
 * [SoftLexicon](10-chinese-ner/03-SoftLexicon.md)
 * [FLAT](10-chinese-ner/04-FLAT.md)
 * [LEBERT](10-chinese-ner/05-LEBERT.md)
+* [中文NER总结](10-chinese-ner/06-endview.md)
 
 ## Embedding知识板块
 
