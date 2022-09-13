@@ -27,9 +27,7 @@
 - E：当前字为词的词尾；
 - S：当前自独立可以成词的词：
 
-<img src="https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912012013.png" style="zoom:85%;" />
-
-
+![](https://pictrue-bed.oss-cn-beijing.aliyuncs.com/20220912012013.png)
 
 > PS：这种挂词方式就很好的解决了WC-LSTM的挂词中的信息确实缺陷，对于"人和药店"，会被挂到每个字的不同set中
 
